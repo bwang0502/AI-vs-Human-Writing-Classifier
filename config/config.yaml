@@ -1,0 +1,47 @@
+# Model Configuration
+model:
+  name: "bert-base-uncased"  # or other transformer models
+  max_length: 512
+  num_labels: 2
+  dropout: 0.1
+  learning_rate: 2e-5
+  
+# Training Configuration
+training:
+  batch_size: 16
+  epochs: 3
+  validation_split: 0.2
+  test_split: 0.1
+  early_stopping_patience: 3
+  save_best_model: true
+  
+# Data Configuration
+data:
+  text_column: "text"
+  label_column: "label"
+  min_text_length: 50
+  max_text_length: 5000
+  
+# Feature Engineering
+features:
+  use_linguistic_features: true
+  use_stylometric_features: true
+  use_embeddings: true
+  
+# Evaluation
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1", "auc"]
+  cross_validation_folds: 5
+  
+# Logging
+logging:
+  use_wandb: false
+  use_tensorboard: true
+  log_dir: "results/logs"
+  
+# Paths
+paths:
+  data_dir: "data"
+  models_dir: "models"
+  results_dir: "results"
+  notebooks_dir: "notebooks"
