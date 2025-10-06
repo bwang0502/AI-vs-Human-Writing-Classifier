@@ -179,6 +179,6 @@ This project is licensed under the MIT License.
 
 ## 📞 Contact
 
-Your Name - your.email@example.com
+Your Name - bwang0502@g.ucla.edu
 
-Project Link: [https://github.com/yourusername/AI-vs-Human-Writing-Classifier](https://github.com/yourusername/AI-vs-Human-Writing-Classifier)
+Project Link: [https://github.com/bwang0502/AI-vs-Human-Writing-Classifier](https://github.com/bwang0502/AI-vs-Human-Writing-Classifier)
