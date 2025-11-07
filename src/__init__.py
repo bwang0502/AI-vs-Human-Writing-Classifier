@@ -13,3 +13,5 @@ __email__ = "your.email@example.com"
 from .utils import *
 from .data import *
 from .models import *
+
+# This file makes src a Python package
