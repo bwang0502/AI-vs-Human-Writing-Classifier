@@ -223,7 +223,12 @@ def plot_lime_explanation(exp, prediction):
     Shows which words push toward AI vs Human.
     """
     # Get the explanation for the predicted class
-    exp_list = exp.as_list(label=prediction)
+    # Use the prediction directly as LIME label
+    try:
+        exp_list = exp.as_list(label=prediction)
+    except KeyError:
+        # If prediction label doesn't exist, try label 1 (the positive class)
+        exp_list = exp.as_list(label=1)
     
     # Separate into words and weights
     words = [item[0] for item in exp_list]
@@ -354,13 +359,17 @@ def main():
         if len(text_input.strip()) < 20:
             st.error("Please enter at least 20 characters for analysis.")
         else:
-            with st.spinner("Analyzing text..."):
-                # Get prediction
-                prediction, probabilities = predict_text(text_input, model, tokenizer)
+            # Clear any previous results by using a container
+            results_container = st.container()
+            
+            with results_container:
+                with st.spinner("Analyzing text..."):
+                    # Get prediction
+                    prediction, probabilities = predict_text(text_input, model, tokenizer)
                 
-                # Display results
+                # Display results AFTER spinner completes
                 st.markdown("---")
-                st.header("📊 Results")
+                st.header("Results")
                 
                 # Main prediction
                 col1, col2 = st.columns(2)
@@ -390,12 +399,13 @@ def main():
                 
                 # LIME Explanation
                 st.markdown("---")
-                st.header("🔍 Explanation: Which Words Mattered?")
+                st.header("Explanation: Which Words Mattered?")
                 
                 with st.spinner("Generating explanation..."):
                     lime_exp = create_lime_explanation(text_input, model, tokenizer)
                     fig = plot_lime_explanation(lime_exp, prediction)
-                    st.pyplot(fig)
+                
+                st.pyplot(fig)
                 
                 st.markdown("""
                 **How to read this:**
@@ -407,7 +417,12 @@ def main():
                 # Additional info
                 with st.expander("View Full LIME Explanation"):
                     st.write("**Full LIME Explanation:**")
-                    for word, weight in lime_exp.as_list(label=prediction):
+                    try:
+                        exp_list = lime_exp.as_list(label=prediction)
+                    except KeyError:
+                        exp_list = lime_exp.as_list(label=1)
+                    
+                    for word, weight in exp_list:
                         emoji = "🟢" if weight > 0 else "🔴"
                         st.write(f"{emoji} `{word}`: {weight:.3f}")
 
