@@ -318,11 +318,9 @@ def main():
         st.header("Example Texts")
         if st.button("Load AI Example"):
             st.session_state.example_text = random.choice(AI_EXAMPLES)
-            st.rerun()
         
         if st.button("Load Human Example"):
             st.session_state.example_text = random.choice(HUMAN_EXAMPLES)
-            st.rerun()
     
     # Main input area
     st.header("Enter Text")
@@ -350,7 +348,6 @@ def main():
     with col2:
         if st.button("Clear", use_container_width=True):
             st.session_state.example_text = ""
-            st.rerun()
     
     # Process when button is clicked
     if analyze_button:
@@ -402,13 +399,13 @@ def main():
                 
                 st.markdown("""
                 **How to read this:**
-                - 🟢 **Green bars**: Words that support the prediction
-                - 🔴 **Red bars**: Words that contradict the prediction
+                - **Green bars**: Words that support the prediction
+                - **Red bars**: Words that contradict the prediction
                 - **Longer bars**: Stronger influence
                 """)
                 
                 # Additional info
-                with st.expander("📋 View Detailed Explanation"):
+                with st.expander("View Full LIME Explanation"):
                     st.write("**Full LIME Explanation:**")
                     for word, weight in lime_exp.as_list(label=prediction):
                         emoji = "🟢" if weight > 0 else "🔴"
