@@ -337,7 +337,8 @@ def main():
         height=200,
         placeholder="Paste/type text here",
         help="The model works best with at least a few sentences.",
-        label_visibility="collapsed"  # This hides the label but keeps it for accessibility
+        label_visibility="collapsed",
+        key="text_input_area"  # Add a key to control the widget
     )
     
     # Character count
@@ -353,6 +354,7 @@ def main():
     with col2:
         if st.button("Clear", use_container_width=True):
             st.session_state.example_text = ""
+            st.session_state.text_input_area = ""  # Clear the text area widget
     
     # Process when button is clicked
     if analyze_button:
