@@ -1,0 +1,51 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Data (but NOT model files - we need those!)
+data/*.csv
+data/*.json
+
+# Large CSV files (too big for GitHub - TRAINING DATA ONLY)
+data/raw/cleaned_ai_human_dataset.csv
+data/raw/ai_human_writing_detection.csv
+data/raw/balanced_7class_dataset.csv
+data/raw/*.csv
+
+# Large model files (if over 100MB)
+results/multiclass_model/*/best_model.pt
+results/multiclass_model/*/*.pt
+results/finetuned_improved_optionA/*/distilbert_finetuned_improved.pt
+results/finetuned_improved_optionA/*/*.pt
+
+# All result folders except specific ones we keep
+results/*
+!results/finetuned_improved_optionA/
+!results/multiclass_model/
+
+# But exclude model files inside those folders
+results/**/*.pt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml

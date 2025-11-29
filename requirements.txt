@@ -1,0 +1,40 @@
+# Core Data Science
+numpy==1.24.3
+pandas>=2.0.0
+scikit-learn>=1.0.0
+scipy>=1.7.0
+
+# Deep Learning
+torch==2.0.1
+transformers==4.35.0
+sentence-transformers>=2.2.0
+
+# NLP Libraries
+nltk>=3.6
+spacy>=3.0.0
+textblob>=0.15.3
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly>=5.0.0
+shap>=0.42.0
+lime==0.2.0.1
+wordcloud>=1.9.0
+
+# Development Tools
+jupyter>=1.0.0
+ipykernel>=6.0.0
+notebook>=6.4.0
+
+# Testing and Quality
+pytest>=7.0.0
+black>=22.0.0
+
+# Utilities
+pyyaml>=5.4.0
+tqdm>=4.62.0
+python-dotenv>=0.19.0
+
+# Streamlit
+streamlit==1.28.0

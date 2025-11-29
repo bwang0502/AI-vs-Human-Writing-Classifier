@@ -1,0 +1,18 @@
+# Data Directory
+
+This directory contains the datasets for the AI vs Human writing classification project.
+
+## Structure
+
+- `raw/`: Original, unprocessed datasets
+- `processed/`: Cleaned and preprocessed datasets ready for model training
+
+## Data Format
+
+Expected data format is CSV with columns:
+- `text`: The text content to classify
+- `label`: Binary label (0 for human-written, 1 for AI-generated)
+
+## Sources
+
+Add information about your data sources here.

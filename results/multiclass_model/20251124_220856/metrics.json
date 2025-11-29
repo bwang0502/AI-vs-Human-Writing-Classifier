@@ -1,0 +1,16 @@
+{
+    "test_accuracy": 0.8148148148148148,
+    "test_f1": 0.8202495526345247,
+    "test_loss": 0.5727657175190012,
+    "best_val_f1": 0.8081143143635723,
+    "num_classes": 7,
+    "class_names": [
+        "Claude",
+        "GPT-3.5",
+        "GPT-4",
+        "Human",
+        "LLaMA",
+        "Mistral",
+        "Other AI"
+    ]
+}

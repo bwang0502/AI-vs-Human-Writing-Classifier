@@ -1,0 +1,10 @@
+Label Mapping for 7-Class Classification
+==================================================
+
+0: Claude (1,080 samples)
+1: GPT-3.5 (1,080 samples)
+2: GPT-4 (1,080 samples)
+3: Human (1,080 samples)
+4: LLaMA (1,080 samples)
+5: Mistral (1,080 samples)
+6: Other AI (1,080 samples)
