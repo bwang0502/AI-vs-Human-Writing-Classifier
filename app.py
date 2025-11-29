@@ -550,8 +550,3 @@ if __name__ == "__main__":
         logits = outputs.logits
         probabilities = torch.softmax(logits, dim=1)[0].cpu().numpy()
         prediction = torch.argmax(logits, dim=1).item()
-    
-    return prediction, probabilities
-
-if __name__ == "__main__":
-    main()
