@@ -542,11 +542,3 @@ def predict_multiclass(text, model, tokenizer):
 if __name__ == "__main__":
     main()
     
-    input_ids = encoding['input_ids'].to(device)
-    attention_mask = encoding['attention_mask'].to(device)
-    
-    with torch.no_grad():
-        outputs = model(input_ids=input_ids, attention_mask=attention_mask)
-        logits = outputs.logits
-        probabilities = torch.softmax(logits, dim=1)[0].cpu().numpy()
-        prediction = torch.argmax(logits, dim=1).item()
