@@ -1,0 +1,4 @@
+,train_acc,val_acc,test_acc,test_f1,test_roc_auc,test_pr_auc,cv_mean,cv_std
+Logistic Regression,0.5458,0.5616,0.5,0.4869,0.5255,0.4951,0.5069,0.013
+Random Forest,1.0,0.5297,0.4781,0.4348,0.4933,0.4966,0.5091,0.0264
+SVM,0.6773,0.5388,0.4927,0.4633,0.514,0.5011,0.4988,0.0239

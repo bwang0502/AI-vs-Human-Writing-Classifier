@@ -1,0 +1,8 @@
+Metric,Value,Percentage
+Total Samples,"50,000",100%
+Human Samples,"25,000",50.0%
+AI Samples,"25,000",50.0%
+Unique Sources,63,N/A
+Duplicates,0,0.00%
+Avg Text Length,3286 chars,N/A
+Avg Word Count,524 words,N/A

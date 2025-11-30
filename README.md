@@ -1,9 +1,5 @@
 # AI vs Human Text Classifier
 
-Two transformer-based models for detecting AI-generated text:
-- **Binary Classifier**: Human vs AI (94% accuracy)
-- **Multi-Class Classifier**: Identify which AI model wrote the text (82% F1-score)
-
 ## 🚀 Quick Start
 
 1. Clone the repo:
@@ -18,26 +14,27 @@ pip install -r requirements.txt
 ```
 
 3. **Download pre-trained models** (too large for GitHub):
-   - Download from [Google Drive link - ADD YOUR LINK]
+   
+   The model files are excluded from Git due to their size:
+   - Binary model: 255 MB
+   - Multi-class model: 766 MB
+   
+   **Option A: Download from Google Drive**
+   - [Download models.zip](YOUR_GOOGLE_DRIVE_LINK)
    - Extract to `results/` folder
+   
+   **Option B: Retrain models**
+   ```bash
+   python train_binary_model.py
+   python train_multiclass_model.py
+   ```
 
 4. Run Streamlit app:
 ```bash
 streamlit run app.py
 ```
 
-## 📊 Model Performance
-
-### Binary Classifier
-- Accuracy: 94%
-- F1-Score: 94%
-
-### Multi-Class Classifier (7 classes)
-- Overall F1: 82%
-- Human detection: 96% F1
-- Claude detection: 90% F1
-
-## 🗂️ Project Structure
+## 📦 Model Files Structure
 
 ````markdown
 # AI vs Human Text Detector
