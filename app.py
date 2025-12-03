@@ -137,7 +137,7 @@ def load_model():
     # Load the base DistilBERT architecture
     model = DistilBertForSequenceClassification.from_pretrained(
         'distilbert-base-uncased',
-        num_labels=2  # Binary: Human (0) or AI (1)
+        num_labels=2  # We add this classification head
     )
     
     # Load your trained weights into the model
@@ -459,13 +459,13 @@ def multiclass_classifier_page():
     st.title("AI Model Identifier (7-Class)")
     st.markdown("""
     **Identify which AI model generated the text:**
-    - 🤖 Claude
-    - 🤖 GPT-3.5
-    - 🤖 GPT-4
-    - 👤 Human
-    - 🤖 LLaMA
-    - 🤖 Mistral
-    - 🤖 Other AI
+    - Claude
+    - GPT-3.5
+    - GPT-4
+    - Human
+    - LLaMA
+    - Mistral
+    - Other AI
     """)
     
     # Load multiclass model
@@ -541,4 +541,3 @@ def predict_multiclass(text, model, tokenizer):
 
 if __name__ == "__main__":
     main()
-    
