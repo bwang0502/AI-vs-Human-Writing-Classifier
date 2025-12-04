@@ -137,7 +137,7 @@ def load_model():
     # Load the base DistilBERT architecture
     model = DistilBertForSequenceClassification.from_pretrained(
         'distilbert-base-uncased',
-        num_labels=2  # We add this classification head
+        num_labels=2  # Binary: Human (0) or AI (1)
     )
     
     # Load your trained weights into the model
@@ -541,3 +541,4 @@ def predict_multiclass(text, model, tokenizer):
 
 if __name__ == "__main__":
     main()
+    

@@ -232,23 +232,18 @@ def plot_confusion_matrix(y_true, y_pred, class_names, run_dir):
     print(f"   📊 Saved confusion matrix")
 
 def main():
-    print("="*70)
-    print("TRAINING 7-CLASS MULTICLASS MODEL")
-    print("="*70)
     
     # Load data
     train_data, val_data, test_data, df = load_and_prepare_data()
     
-    # Get class names
     class_mapping = df[['label_numeric', 'model_class']].drop_duplicates().sort_values('label_numeric')
     class_names = class_mapping['model_class'].tolist()
     
     # Load tokenizer and model
-    print("\n🤖 Loading DistilBERT model and tokenizer...")
     tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
     model = DistilBertForSequenceClassification.from_pretrained(
         'distilbert-base-uncased',
-        num_labels=NUM_CLASSES
+        num_labels=NUM_CLASSES # 7 classes
     )
     model.to(device)
     
